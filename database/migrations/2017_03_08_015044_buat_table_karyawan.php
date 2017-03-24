@@ -17,7 +17,7 @@ class BuatTableKaryawan extends Migration
             $table->string('nama');
             $table->string('alamat');
             $table->integer('pengguna_id',false,true);
-            $table->foreign('pengguna_id')->references('id')->on('pengguna');
+            $table->foreign('pengguna_id')->references('id')->on('pengguna')->onDelete('cascade')->onUpdate('cascade');
             $table->timestamps();
         });
     }

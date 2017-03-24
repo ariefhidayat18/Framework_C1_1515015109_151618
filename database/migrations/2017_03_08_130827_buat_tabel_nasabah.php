@@ -16,7 +16,7 @@ class BuatTabelNasabah extends Migration
             $table->increments('id');
             $table->string('nama',50);
             $table->integer('pengguna_id',false,true);
-            $table->foreign('pengguna_id')->references('id')->on('pengguna');
+            $table->foreign('pengguna_id')->references('id')->on('pengguna')->onDelete('cascade')->onUpdate('cascade');
             $table->date('tgl_lahir');
             $table->text('alamat');
             $table->string('no_telp',12);
