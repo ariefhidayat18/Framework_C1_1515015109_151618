@@ -6,19 +6,29 @@
 	</div>
 	<table class="table">
 			<tr>
-				<td>Id Mahasiswa</td>
+				<td>Nama Mahasiswa</td>
 				<td>:</td>
-				<td>{{$jadwal_matakuliah->mahasiswa_id}}</td>
+				<td>{{$jadwal_matakuliah->mahasiswa->nama}}</td>
 			</tr>
 			<tr>
-				<td>Id Ruangan</td>
+				<td>Nim Mahasiswa</td>
 				<td>:</td>
-				<td>{{$jadwal_matakuliah->ruangan_id}}</td>
+				<td>{{$jadwal_matakuliah->mahasiswa->nim}}</td>
 			</tr>
 			<tr>
-				<td>Id Dosen Matakuliah</td>
+				<td>Nama Dosen</td>
 				<td>:</td>
-				<td>{{$jadwal_matakuliah->dosen_matakuliah}}</td>
+				<td>{{$jadwal_matakuliah->dosen_matakuliah->dosen->nama}}</td>
+			</tr>
+			<tr>
+				<td>Nip Dosen</td>
+				<td>:</td>
+				<td>{{$jadwal_matakuliah->dosen_matakuliah->dosen->nip}}</td>
+			</tr>
+			<tr>
+				<td>Nama Matakuliah</td>
+				<td>:</td>
+				<td>{{$jadwal_matakuliah->dosen_matakuliah->matakuliah->title}}</td>
 			</tr>
 			<tr>
 				<td class="col-xs-4">Dibuat Tanggal</td>

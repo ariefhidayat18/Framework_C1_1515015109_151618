@@ -21,9 +21,15 @@
 				<td>{{$dosen->alamat}}</td>
 			</tr>
 			<tr>
-				<td>Id Pengguna</td>
+			<tr>
+				<td>Username</td>
 				<td>:</td>
-				<td>{{$dosen->pengguna_id}}</td>
+				<td>{{$dosen->pengguna->username}}</td>
+			</tr>
+			<tr>
+				<td>Password</td>
+				<td>:</td>
+				<td>{{$dosen->pengguna->password}}</td>
 			</tr>
 			<tr>
 				<td class="col-xs-4">Dibuat Tanggal</td>

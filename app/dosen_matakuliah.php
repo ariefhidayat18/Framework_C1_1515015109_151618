@@ -24,4 +24,14 @@ class dosen_matakuliah extends Model
     	return $this->hasMany(jadwal_matakuliah::class,'jadwal_matakuliah');
     }
 
+    public function listDosenDanMatakuliah()
+    {
+        $out = [];
+        foreach ($this->all() as $dosenMtk) {
+            # code...
+            $out[$dosenMtk->id] = "{$dosenMtk->dosen->nama} ({$dosenMtk->matakuliah->title})";
+        }
+        return $out;
+    }
+
 }

@@ -2,38 +2,37 @@
 @section('container')
 <div class="panel panel-default">
 	<div class="panel-heading">
-		<strong>Seluruh Data Jadwal Matakuliah</strong>
-		<a href="{{url('jadwal_matakuliah/tambah')}}" class="btn btn-xs btn-primary pull-right">
-			<i class="fa fa-plus"></i>Jadwal Matakuliah
-		</a>
-		<div class="clearfix"></div>
+		<strong>Seluruh Data Jadwal Mahasiswa</strong>
+		<a href="{{ url('jadwal_matakuliah/tambah')}}" class="btn btn-xs btn-primary pull-right"><i class="fa fa-plus"></i>Jadwal Mahasiswa</a>
+		<div class="clearfi"></div>
 	</div>
 	<table class="table">
-		<head>
+		<thead>
 			<tr>
 				<th>No.</th>
-				<th>Id Mahasiswa</th>
-				<th>Id Ruangan</th>
-				<th>Id Dosen Matakuliah</th>
+				<th>Nama Mahasiswa</th>
+				<th>Nim Mahasiswa</th>
+				<th>Nama Matakuliah</th>
+				<th>Aksi</th>
 			</tr>
-		</head>
+		</thead>
 		<tbody>
 			<?php $x=1; ?>
-			@foreach($data as $jadwal_matakuliah)
-			<tr>
-				<td>{{$x++}}</td>
-				<td>{{$jadwal_matakuliah->mahasiswa_id or 'mahasiswa_id kosong'}}</td>
-				<td>{{$jadwal_matakuliah->ruangan_id or 'ruangan_id kosong'}}</td>
-				<td>{{$jadwal_matakuliah->dosen_matakuliah or 'dosen_matakuliah kosong'}}</td>
-				<td>
-					<div class="btn-group" role="group">
-						<a href="{{url('jadwal_matakuliah/edit/'.$jadwal_matakuliah->id)}}" class="btn btn-warning btn-xs" data-toggle="tooltip" data-placement="top" title="Ubah"><i class="fa fa-pencil"></i></a>
-						<a href="{{url('jadwal_matakuliah/lihat/'.$jadwal_matakuliah->id)}}" class="btn btn-info btn-xs" data-toggle="tooltip" data-placement="top" title="Lihat"><i class="fa fa-eye"></i></a>
-						<a href="{{url('jadwal_matakuliah/hapus/'.$jadwal_matakuliah->id)}}" class="btn btn-danger btn-xs" data-toggle="tooltip" data-placement="top" title="Hapus"><i class="fa fa-remove"></i></a>
-					</div>
-				</td>
-			</tr>
-			@endforeach
+			@foreach ($semuaJadwalMatakuliah as $jadwal)
+				<tr>
+					<td>{{ $x++ }}</td>
+					<td>{{ $jadwal->mahasiswa->nama or 'nama kosong'}}</td>
+					<td>{{ $jadwal->mahasiswa->nim or 'nim kosong'}}</td>
+					<td>{{ $jadwal->dosen_matakuliah->matakuliah->title or 'matakuliah kosong'}}</td>
+					<td>
+						<div class="btn-group" role="group">
+							<a href="{{ url('jadwal_matakuliah/edit/'.$jadwal->id)}}" class="btn btn-info btn-xs" data-toggle="tooltip" data-placement="top" title="Ubah"><i class="fa fa-pencil"></i></a>
+							<a href="{{ url('jadwal_matakuliah/lihat/'.$jadwal->id)}}" class="btn btn-warning btn-xs" data-toggle="tooltip" data-placement="top" title="Lihat"><i class="fa fa-eye"></i></a>
+							<a href="{{ url('jadwal_matakuliah/hapus/'.$jadwal->id)}}" class="btn btn-danger btn-xs" data-toggle="tooltip" data-placement="top" title="Hapus"><i class="fa fa-remove"></i></a>
+						</div>
+					</td>
+				</tr>
+				@endforeach
 		</tbody>
 	</table>
 </div>

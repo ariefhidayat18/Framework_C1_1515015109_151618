@@ -4,29 +4,28 @@
 	<div class="panel-heading">
 		<strong>Seluruh Data mahasiswa</strong>
 		<a href="{{url('mahasiswa/tambah')}}" class="btn btn-xs btn-primary pull-right">
-			<i class="fa fa-plus"></i>mahasiswa
+			<i class="fa fa-plus"></i>Mahasiswa
 		</a>
 		<div class="clearfix"></div>
 	</div>
 	<table class="table">
-		<head>
+		<thead>
 			<tr>
 				<th>No.</th>
 				<th>Nama</th>
 				<th>Nim</th>
 				<th>Alamat</th>
-				<th>Pengguna Id</th>
+				<th>Aksi</th>
 			</tr>
-		</head>
+		</thead>
 		<tbody>
-			<?php $x=1; ?>
-			@foreach($data as $mahasiswa)
+			<?php $x=1;?>
+			@foreach($semuaMahasiswa as $mahasiswa)
 			<tr>
 				<td>{{$x++}}</td>
 				<td>{{$mahasiswa->nama or 'nama kosong'}}</td>
 				<td>{{$mahasiswa->nim or 'nim kosong'}}</td>
 				<td>{{$mahasiswa->alamat or 'alamat kosong'}}</td>
-				<td>{{$mahasiswa->pengguna_id or 'pengguna_id kosong'}}</td>
 				<td>
 					<div class="btn-group" role="group">
 						<a href="{{url('mahasiswa/edit/'.$mahasiswa->id)}}" class="btn btn-warning btn-xs" data-toggle="tooltip" data-placement="top" title="Ubah"><i class="fa fa-pencil"></i></a>

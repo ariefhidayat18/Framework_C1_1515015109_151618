@@ -1,3 +1,4 @@
+
 @extends('master')
 @section('container')
 <div class="panel panel-warning">
@@ -21,9 +22,14 @@
 				<td>{{$mahasiswa->alamat}}</td>
 			</tr>
 			<tr>
-				<td>Id Pengguna</td>
+				<td>Username</td>
 				<td>:</td>
-				<td>{{$mahasiswa->pengguna_id}}</td>
+				<td>{{$mahasiswa->pengguna->username}}</td>
+			</tr>
+			<tr>
+				<td>Password</td>
+				<td>:</td>
+				<td>{{$mahasiswa->pengguna->password}}</td>
 			</tr>
 			<tr>
 				<td class="col-xs-4">Dibuat Tanggal</td>

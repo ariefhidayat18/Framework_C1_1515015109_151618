@@ -76,6 +76,8 @@ Route::get('jadwal_matakuliah/edit/{jadwal_matakuliah}','jadwal_matakuliahContro
 Route::post('jadwal_matakuliah/edit/{jadwal_matakuliah}','jadwal_matakuliahController@update');
 Route::get('jadwal_matakuliah/hapus/{jadwal_matakuliah}','jadwal_matakuliahController@hapus');
 
+
+
 Route::get('/', function () 
 {
 	return view('welcome');
